@@ -39,6 +39,19 @@ void make_move(char turn[5], char board[ROWS][COLS])
     printf("[%s] Piece new location: \n", turn);
     scanf("%s", pc_newlc);
 
+    // get indices for board (e.g. convert e4 to x and y index)
+    int oy = pc_oldlc[0] - 'a';
+    int ox = 8 - (pc_oldlc[1] - '0');
+
+    int ny = pc_newlc[0] - 'a';
+    int nx = 8 - (pc_newlc[1] - '0');
+
+    printf("%d %d\n", ox, oy);
+    printf("%d %d\n", nx, ny);
+
+    board[nx][ny] = board[ox][oy];
+    board[ox][oy] = ' ';
+
     print_board(board);
 
     if (strcmp(turn, "WHITE") == 0)
