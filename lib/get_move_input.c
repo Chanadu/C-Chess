@@ -1,17 +1,8 @@
-#include "make_move.h"
+#include "get_move_input.h"
 
 #include <ctype.h>
-#include <stdbool.h>
 
-#include "print_board.h"
-
-void clearNewLineFromBuffer() {
-    int ch;
-    while ((ch = getchar()) != '\n' && ch != EOF)
-        ;
-}
-
-void make_move(bool* isWhiteTurn, char board[ROWS][COLS]) {
+int* get_move_input(bool* isWhiteTurn) {
     char pieceOldLocation[3];
     char pieceNewLocation[3];
 
@@ -35,14 +26,5 @@ void make_move(bool* isWhiteTurn, char board[ROWS][COLS]) {
     int newY = pieceNewLocation[0] - 'a';
     int newX = 8 - (pieceNewLocation[1] - '0');
 
-    printf("Old X: [%d], Old Y: [%d]\n", oldX, oldY);
-    printf("Old X: [%d], Old Y: [%d]\n", newX, newY);
-
-    board[newX][newY] = board[oldX][oldY];
-    board[oldX][oldY] = ' ';
-
-    *isWhiteTurn ^= 1;
-
-    print_board(board);
-    make_move(isWhiteTurn, board);
+    return (int[]){oldX, oldY, newX, newY};
 }
