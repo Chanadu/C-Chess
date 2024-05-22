@@ -3,7 +3,7 @@
 
 #include "utils.h"
 
-int* get_move_input(bool* isWhiteTurn);
+int* get_move_input(bool* isWhiteTurn, const char board[ROWS][COLS]);
 void clearNewLineFromBuffer();
 
 #endif

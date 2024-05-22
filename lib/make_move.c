@@ -1,5 +1,9 @@
 #include "make_move.h"
 
+#include <stdio.h>
+
+#include "get_move_input.c"
+#include "moves/pawn.c"
 #include "print_board.c"
 
 void clearNewLineFromBuffer() {
@@ -9,28 +13,12 @@ void clearNewLineFromBuffer() {
 }
 
 void make_move(bool* isWhiteTurn, char board[ROWS][COLS]) {
-    char pieceOldLocation[3];
-    char pieceNewLocation[3];
+    int* user_move = get_move_input(isWhiteTurn, board);
 
-    printf("[%s] Piece to move: \n", *isWhiteTurn ? "WHITE" : "BLACK");
-    fgets(pieceOldLocation, 3, stdin);
-    clearNewLineFromBuffer();
-
-    printf("[%s] Piece new location: \n", *isWhiteTurn ? "WHITE" : "BLACK");
-    fgets(pieceNewLocation, 3, stdin);
-    clearNewLineFromBuffer();
-
-    for (int i = 0; i < 2; i++) {
-        pieceOldLocation[i] = tolower(pieceOldLocation[i]);
-        pieceNewLocation[i] = tolower(pieceNewLocation[i]);
-    }
-
-    // get indices for board (e.g. convert e4 to x and y index)
-    int oldY = pieceOldLocation[0] - 'a';
-    int oldX = 8 - (pieceOldLocation[1] - '0');
-
-    int newY = pieceNewLocation[0] - 'a';
-    int newX = 8 - (pieceNewLocation[1] - '0');
+    int oldX = user_move[0];
+    int oldY = user_move[1];
+    int newX = user_move[2];
+    int newY = user_move[3];
 
     printf("Old X: [%d], Old Y: [%d]\n", oldX, oldY);
     printf("Old X: [%d], Old Y: [%d]\n", newX, newY);
