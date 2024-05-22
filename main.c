@@ -50,8 +50,8 @@ void make_move(bool* isWhiteTurn, char board[ROWS][COLS])
 
     printf("[%s] Piece to move: \n", *isWhiteTurn ? "WHITE" : "BLACK");
     fgets(pieceOldLocation, 3, stdin);
-    // fflush(stdin);
     clearNewLineFromBuffer();
+
     printf("[%s] Piece new location: \n", *isWhiteTurn ? "WHITE" : "BLACK");
     fgets(pieceNewLocation, 3, stdin);
     clearNewLineFromBuffer();
@@ -62,12 +62,6 @@ void make_move(bool* isWhiteTurn, char board[ROWS][COLS])
         pieceNewLocation[i] = tolower(pieceNewLocation[i]);
     }
 
-    printf("\n\n\n");
-    printf("OLD: %s", pieceOldLocation);
-    printf("\n\n\n");
-    printf("NEW: %s", pieceNewLocation);
-    printf("\n\n\n");
-
     // get indices for board (e.g. convert e4 to x and y index)
     int oldY = pieceOldLocation[0] - 'a';
     int oldX = 8 - (pieceOldLocation[1] - '0');
@@ -75,8 +69,8 @@ void make_move(bool* isWhiteTurn, char board[ROWS][COLS])
     int newY = pieceNewLocation[0] - 'a';
     int newX = 8 - (pieceNewLocation[1] - '0');
 
-    printf("%d %d\n", oldX, oldY);
-    printf("%d %d\n", newX, newY);
+    printf("Old X: [%d], Old Y: [%d]\n", oldX, oldY);
+    printf("Old X: [%d], Old Y: [%d]\n", newX, newY);
 
     board[newX][newY] = board[oldX][oldY];
     board[oldX][oldY] = ' ';
@@ -89,13 +83,16 @@ void make_move(bool* isWhiteTurn, char board[ROWS][COLS])
 
 void print_board(char board[ROWS][COLS])
 {
+    printf("\n  ---------------------\n");
     for (int i = 0; i < ROWS; i++)
     {
+        printf("%d |  ", 8 - i);
         for (int j = 0; j < COLS; j++)
         {
             char output = board[i][j] == ' ' ? '~' : board[i][j];
             printf("%c ", output);
         }
-        printf("\n");
+        printf(" |\n");
     }
+    printf("  ---------------------\n     a b c d e f g h\n\n");
 }
