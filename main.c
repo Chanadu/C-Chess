@@ -1,7 +1,6 @@
 #include <stdbool.h>
 
-#include "./utils/make_move.c"
-#include "utils.h"
+#include "utils/make_move.h"
 
 int main(int argc, char** argv) {
     // clang-format off

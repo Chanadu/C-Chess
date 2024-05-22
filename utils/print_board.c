@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "print_board.h"
 
 #define ROWS 8
 #define COLS 8

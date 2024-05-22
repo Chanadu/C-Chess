@@ -1,7 +1,9 @@
+#include "make_move.h"
+
 #include <ctype.h>
 #include <stdbool.h>
 
-#include "./print_board.c"
+#include "print_board.h"
 
 void clearNewLineFromBuffer() {
     int ch;
