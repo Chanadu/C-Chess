@@ -2,7 +2,7 @@ BasedOnStyle: Google
 IndentWidth: 4
 UseTab: Never
 TabWidth: 4
-BreakBeforeBraces: Allman
+BreakBeforeBraces: Attach
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 ColumnLimit: 100

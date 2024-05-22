@@ -5,8 +5,7 @@
 #define ROWS 8
 #define COLS 8
 
-typedef enum
-{
+typedef enum {
     false,  // 0
     true    // 1
 } bool;
@@ -14,8 +13,7 @@ typedef enum
 void make_move(bool* isWhiteTurn, char board[ROWS][COLS]);
 void print_board(char board[ROWS][COLS]);
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     // clang-format off
     char board[ROWS][COLS] = {
         {'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},
@@ -36,15 +34,13 @@ int main(int argc, char** argv)
     return 1;
 }
 
-void clearNewLineFromBuffer()
-{
+void clearNewLineFromBuffer() {
     int ch;
     while ((ch = getchar()) != '\n' && ch != EOF)
         ;
 }
 
-void make_move(bool* isWhiteTurn, char board[ROWS][COLS])
-{
+void make_move(bool* isWhiteTurn, char board[ROWS][COLS]) {
     char pieceOldLocation[3];
     char pieceNewLocation[3];
 
@@ -56,8 +52,7 @@ void make_move(bool* isWhiteTurn, char board[ROWS][COLS])
     fgets(pieceNewLocation, 3, stdin);
     clearNewLineFromBuffer();
 
-    for (int i = 0; i < 2; i++)
-    {
+    for (int i = 0; i < 2; i++) {
         pieceOldLocation[i] = tolower(pieceOldLocation[i]);
         pieceNewLocation[i] = tolower(pieceNewLocation[i]);
     }
@@ -81,14 +76,11 @@ void make_move(bool* isWhiteTurn, char board[ROWS][COLS])
     make_move(isWhiteTurn, board);
 }
 
-void print_board(char board[ROWS][COLS])
-{
+void print_board(char board[ROWS][COLS]) {
     printf("\n  ---------------------\n");
-    for (int i = 0; i < ROWS; i++)
-    {
+    for (int i = 0; i < ROWS; i++) {
         printf("%d |  ", 8 - i);
-        for (int j = 0; j < COLS; j++)
-        {
+        for (int j = 0; j < COLS; j++) {
             char output = board[i][j] == ' ' ? '~' : board[i][j];
             printf("%c ", output);
         }
