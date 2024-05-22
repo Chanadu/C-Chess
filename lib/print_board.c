@@ -1,7 +1,4 @@
-#include <stdio.h>
-
-#define ROWS 8
-#define COLS 8
+#include "print_board.h"
 
 void print_board(char board[ROWS][COLS]) {
     printf("\n  ---------------------\n");

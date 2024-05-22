@@ -1,7 +1,5 @@
 #include "get_move_input.h"
 
-#include <ctype.h>
-
 int* get_move_input(bool* isWhiteTurn) {
     char pieceOldLocation[3];
     char pieceNewLocation[3];

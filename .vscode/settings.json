@@ -4,6 +4,7 @@
 		"print_board.h": "c",
 		"make_move.h": "c",
 		"stdbool.h": "c",
-		"ctype.h": "c"
+		"ctype.h": "c",
+		"stdio.h": "c"
 	}
 }

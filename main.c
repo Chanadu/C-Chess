@@ -1,3 +1,5 @@
+#include "include/main.h"
+
 #include <stdbool.h>
 
 #include "lib/make_move.c"
