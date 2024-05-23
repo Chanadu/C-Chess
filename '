@@ -1,5 +1,0 @@
-#include "pawn.h"
-
-int* get_possible_moves_pawn(bool* isWhiteTurn, int oldX, int oldY, char board[ROWS][COLS]) {
-    return (int*){*oldX + 1, oldY};
-}
