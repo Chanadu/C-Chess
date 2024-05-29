@@ -6,11 +6,7 @@
 #include "moves/pawn.c"
 #include "print_board.c"
 
-void clearNewLineFromBuffer() {
-    int ch;
-    while ((ch = getchar()) != '\n' && ch != EOF)
-        ;
-}
+
 
 void make_move(bool* isWhiteTurn, char board[ROWS][COLS]) {
     int* user_move = get_move_input(isWhiteTurn, board);

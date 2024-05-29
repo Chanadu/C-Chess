@@ -5,6 +5,8 @@
 		"make_move.h": "c",
 		"stdbool.h": "c",
 		"ctype.h": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"pawn.h": "c",
+		"stdlib.h": "c"
 	}
 }
